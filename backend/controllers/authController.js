@@ -69,7 +69,7 @@ const registerUser = async (req, res) => {
       leaveBalance: user.leaveBalance,
     });
   } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: error.message || "Something went wrong" });
   }
 };
 
