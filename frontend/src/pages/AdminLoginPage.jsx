@@ -83,7 +83,7 @@ function AdminLoginPage() {
           <span className="admin-badge">Admin Portal</span>
         </div>
 
-        <h2 className="auth-title">Admin Sign In</h2>
+        <h2 className="auth-title">Admin Login</h2>
         <p className="auth-subtitle">Restricted to administrators only</p>
 
         {/* Error message box — only visible when something went wrong */}
@@ -118,7 +118,7 @@ function AdminLoginPage() {
             style={{ marginTop: "8px" }}
             disabled={loading}
           >
-            {loading ? "Verifying..." : "Admin Sign In"}
+            {loading ? "Verifying..." : "Admin Login"}
           </button>
         </form>
 

@@ -36,7 +36,7 @@ function LoginPage() {
           <span className="brand-sub">Technologies</span>
         </div>
 
-        <h2 className="auth-title">Sign In</h2>
+        <h2 className="auth-title">Login</h2>
         <p className="auth-subtitle">Enter your credentials to continue</p>
 
         {error && <div className="error-msg">{error}</div>}
@@ -51,7 +51,7 @@ function LoginPage() {
             <input type="password" name="password" placeholder="••••••••" value={userData.password} onChange={handleChange} />
           </div>
           <button type="submit" className="btn btn-primary btn-full" style={{ marginTop: "8px" }} disabled={loading}>
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
