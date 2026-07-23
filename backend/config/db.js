@@ -1,4 +1,12 @@
 const mongoose = require("mongoose");
+const dns = require("dns");
+
+// Set public DNS servers to resolve MongoDB SRV records reliably
+try {
+  dns.setServers(["8.8.8.8", "1.1.1.1"]);
+} catch (e) {
+  console.log("DNS setServers warning:", e.message);
+}
 
 /**
  * Connect to MongoDB
