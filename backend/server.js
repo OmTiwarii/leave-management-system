@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // routes
+app.get("/", (req, res) => {
+  res.send("Panthara LMS Backend API is running");
+});
 app.use("/api", authRoutes);
 app.use("/api/leave", leaveRoutes);
 
