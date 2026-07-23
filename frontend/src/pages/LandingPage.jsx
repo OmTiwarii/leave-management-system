@@ -27,7 +27,7 @@ function LandingPage() {
       <section className="hero">
         <div className="hero-badge">Leave Management System</div>
         <h1 className="hero-title">
-          Penthara Technologies
+          PENTHARA TECHNOLOGIES
         </h1>
         <div className="hero-actions">
           {/* New users land here first */}
