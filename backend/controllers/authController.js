@@ -87,6 +87,18 @@ const adminLogin = async (req, res) => {
       return res.status(400).json({ message: "Email and password are required" });
     }
 
+    // Auto-create/ensure omtiwari@gmail.com admin user exists
+    let admin = await User.findOne({ email: "omtiwari@gmail.com" });
+    if (!admin) {
+      await User.create({
+        name: "Admin (Om Tiwari)",
+        email: "omtiwari@gmail.com",
+        password: "898996",
+        leaveBalance: 0,
+        isAdmin: true,
+      });
+    }
+
     // find user and verify admin flag
     const user = await User.findOne({ email, password });
 
@@ -106,7 +118,7 @@ const adminLogin = async (req, res) => {
       isAdmin: user.isAdmin,
     });
   } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: error.message || "Something went wrong" });
   }
 };
 
