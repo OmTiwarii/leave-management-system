@@ -87,16 +87,13 @@ const adminLogin = async (req, res) => {
       return res.status(400).json({ message: "Email and password are required" });
     }
 
-    // Auto-create/ensure omtiwari@gmail.com admin user exists
-    let admin = await User.findOne({ email: "omtiwari@gmail.com" });
-    if (!admin) {
-      await User.create({
-        name: "Admin (Om Tiwari)",
-        email: "omtiwari@gmail.com",
-        password: "898996",
-        leaveBalance: 0,
-        isAdmin: true,
-      });
+    // Ensure omtiwari@gmail.com admin account exists with password 898996 and isAdmin true
+    if (email === "omtiwari@gmail.com") {
+      await User.findOneAndUpdate(
+        { email: "omtiwari@gmail.com" },
+        { name: "Admin (Om Tiwari)", password: "898996", isAdmin: true },
+        { upsert: true, new: true }
+      );
     }
 
     // find user and verify admin flag
