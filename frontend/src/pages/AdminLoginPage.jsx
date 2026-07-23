@@ -74,7 +74,7 @@ function AdminLoginPage() {
       <div className="auth-card">
         {/* Company logo / brand name at the top of the card */}
         <div className="auth-logo">
-          <span className="brand-main">PANTHARA</span>
+          <span className="brand-main">PENTHARA</span>
           <span className="brand-sub">Technologies</span>
         </div>
 
@@ -96,7 +96,7 @@ function AdminLoginPage() {
             <input
               type="email"
               name="email"
-              placeholder="admin@panthara.com"
+              placeholder="admin@penthara.com"
               value={credentials.email}
               onChange={handleChange}
             />

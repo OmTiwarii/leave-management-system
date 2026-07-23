@@ -12,7 +12,7 @@ function LandingPage() {
       {/* Navbar - brand on the left, login button on the right */}
       <nav className="top-navbar">
         <div className="navbar-brand">
-          <span className="brand-main">PANTHARA</span>
+          <span className="brand-main">PENTHARA</span>
           <span className="brand-sub">Technologies</span>
         </div>
         <div className="navbar-links">
@@ -27,7 +27,7 @@ function LandingPage() {
       <section className="hero">
         <div className="hero-badge">Leave Management System</div>
         <h1 className="hero-title">
-          Panthara Technologies
+          Penthara Technologies
         </h1>
         <div className="hero-actions">
           {/* New users land here first */}
@@ -82,7 +82,7 @@ function LandingPage() {
       {/* Footer - company name, copyright year, and quick nav links */}
       <footer className="site-footer">
         <span style={{ fontWeight: 700, letterSpacing: "1px", color: "#111" }}>
-          PANTHARA TECHNOLOGIES
+          PENTHARA TECHNOLOGIES
         </span>
         {/* The year updates automatically so we never need to edit it */}
         <span>© {new Date().getFullYear()} Leave Management System</span>

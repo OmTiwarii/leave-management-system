@@ -84,7 +84,7 @@ function AdminPage() {
     <div>
       {/* Admin navbar - shows brand, the logged-in admin's name, and a logout button */}
       <nav className="admin-navbar">
-        <div className="nav-brand">PANTHARA · Admin</div>
+        <div className="nav-brand">PENTHARA · Admin</div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <span className="admin-badge">Administrator</span>
           {/* Show which admin is currently signed in */}

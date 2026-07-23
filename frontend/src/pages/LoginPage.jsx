@@ -32,7 +32,7 @@ function LoginPage() {
     <div className="auth-wrapper">
       <div className="auth-card">
         <div className="auth-logo">
-          <span className="brand-main">PANTHARA</span>
+          <span className="brand-main">PENTHARA</span>
           <span className="brand-sub">Technologies</span>
         </div>
 

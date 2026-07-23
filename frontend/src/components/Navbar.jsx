@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <nav className="app-navbar">
-      <div className="nav-brand">PANTHARA LMS</div>
+      <div className="nav-brand">PENTHARA LMS</div>
       <div className="nav-links">
         <Link to="/dashboard" className={location.pathname === "/dashboard" ? "active" : ""}>Dashboard</Link>
         <Link to="/leave"     className={location.pathname === "/leave"     ? "active" : ""}>Apply Leave</Link>
