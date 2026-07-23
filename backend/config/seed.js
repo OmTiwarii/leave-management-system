@@ -6,7 +6,8 @@ dotenv.config();
 
 // add test user and default admin in database
 const seedUser = async () => {
-  await mongoose.connect(process.env.MONGO_URI);
+  const uri = process.env.MONGO_URI || "mongodb://omt898468_db_user:ovOHe8c2CLqBKCVv@ac-ohpkgos-shard-00-00.addvkgc.mongodb.net:27017,ac-ohpkgos-shard-00-01.addvkgc.mongodb.net:27017,ac-ohpkgos-shard-00-02.addvkgc.mongodb.net:27017/leaveManagementDB?ssl=true&replicaSet=atlas-ohpkgos-shard-0&authSource=admin&retryWrites=true&w=majority";
+  await mongoose.connect(uri);
 
   // seed regular test user
   const existingUser = await User.findOne({ email: "test@example.com" });
