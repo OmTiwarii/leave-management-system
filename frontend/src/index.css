@@ -111,8 +111,10 @@ a.btn-primary:hover  { background: var(--accent-hover); border-color: var(--acce
   transition: color 0.15s, background 0.15s;
 }
 .navbar-links a.btn { color: inherit; }
-.navbar-links a:hover { color: var(--text); background: var(--bg-subtle); }
-.navbar-links a.btn:hover { color: #fff; }
+/* Only plain text links get the light hover, not buttons */
+.navbar-links a:not(.btn):hover { color: var(--text); background: var(--bg-subtle); }
+/* Buttons in the navbar keep the same hover color as everywhere else */
+.navbar-links a.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
 
 /* ── Hero ──────────────────────────────── */
 .hero {
