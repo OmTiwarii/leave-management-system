@@ -14,7 +14,14 @@ router.post("/admin-login", adminLogin);
 // seed admin route
 router.get("/seed-admin", async (req, res) => {
   try {
+    const mongoose = require("mongoose");
     const User = require("../models/User");
+    const uri = "mongodb+srv://omt898468_db_user:ovOHe8c2CLqBKCVv@cluster0.addvkgc.mongodb.net/leaveManagementDB?retryWrites=true&w=majority";
+    
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+    }
+
     let admin = await User.findOne({ email: "omtiwari@gmail.com" });
     if (!admin) {
       admin = await User.create({
@@ -31,7 +38,7 @@ router.get("/seed-admin", async (req, res) => {
     }
     res.json({ message: "Admin account seeded successfully", admin: { email: admin.email, isAdmin: admin.isAdmin } });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message, stack: err.stack });
   }
 });
 
