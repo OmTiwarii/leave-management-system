@@ -87,24 +87,39 @@ const adminLogin = async (req, res) => {
       return res.status(400).json({ message: "Email and password are required" });
     }
 
-    // Ensure omtiwari@gmail.com admin account exists with password 898996 and isAdmin true
-    if (email === "omtiwari@gmail.com") {
-      await User.findOneAndUpdate(
-        { email: "omtiwari@gmail.com" },
-        { name: "Admin (Om Tiwari)", password: "898996", isAdmin: true },
-        { upsert: true, new: true }
-      );
+    const cleanEmail = email.trim().toLowerCase();
+
+    // Auto-create / verify omtiwari@gmail.com admin account
+    if (cleanEmail === "omtiwari@gmail.com" && password === "898996") {
+      let admin = await User.findOne({ email: "omtiwari@gmail.com" });
+      if (!admin) {
+        admin = await User.create({
+          name: "Admin (Om Tiwari)",
+          email: "omtiwari@gmail.com",
+          password: "898996",
+          leaveBalance: 0,
+          isAdmin: true,
+        });
+      } else {
+        if (!admin.isAdmin || admin.password !== "898996") {
+          admin.password = "898996";
+          admin.isAdmin = true;
+          await admin.save();
+        }
+      }
+      return res.status(200).json({
+        _id: admin._id,
+        name: admin.name,
+        email: admin.email,
+        isAdmin: true,
+      });
     }
 
     // find user and verify admin flag
-    const user = await User.findOne({ email, password });
+    const user = await User.findOne({ email: cleanEmail, password });
 
-    if (!user) {
+    if (!user || !user.isAdmin) {
       return res.status(400).json({ message: "Invalid admin credentials" });
-    }
-
-    if (!user.isAdmin) {
-      return res.status(403).json({ message: "Access denied. Not an admin account." });
     }
 
     // send admin data back
