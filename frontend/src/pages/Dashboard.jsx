@@ -53,8 +53,7 @@ function Dashboard() {
           <p>Your leave balance overview</p>
         </div>
 
-        {/* ── Leave Stats ──────────────────────────────────────────────
-            Three cards side-by-side showing the employee's leave numbers.
+        {/* Three stat cards showing the employee's leave numbers side by side.
             Total = remaining + used, so the math always adds up. */}
         <div className="stats-grid">
           <div className="stat-card">
@@ -74,9 +73,7 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* ── Quick Action Card ─────────────────────────────────────────
-            A friendly prompt that takes the employee to the leave form
-            with a single click, instead of using the navbar. */}
+        {/* Quick action card - takes the employee to the leave form with one click */}
         <div className="section-card">
           <h3>Quick Actions</h3>
           <p style={{ fontSize: "0.875rem", marginBottom: "16px" }}>

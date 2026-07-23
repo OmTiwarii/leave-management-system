@@ -26,16 +26,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* ── Public Routes ─────────────────────────────────────────────
-            These pages are open to everyone — no login required. */}
+        {/* Public routes - anyone can visit these without logging in */}
         <Route path="/"            element={<LandingPage />} />
         <Route path="/login"       element={<LoginPage />} />
         <Route path="/signup"      element={<SignupPage />} />
         <Route path="/admin-login" element={<AdminLoginPage />} />
 
-        {/* ── Protected Employee Routes ──────────────────────────────────
-            Wrapped in PrivateRoute — if the employee is not logged in they
-            are automatically redirected to the login page instead. */}
+        {/* Protected employee routes - PrivateRoute redirects to login if the user isn't signed in */}
         <Route
           path="/dashboard"
           element={
@@ -53,9 +50,7 @@ function App() {
           }
         />
 
-        {/* ── Protected Admin Route ──────────────────────────────────────
-            Wrapped in AdminPrivateRoute — non-admins are redirected to the
-            admin login page if they try to visit /admin directly. */}
+        {/* Protected admin route - AdminPrivateRoute redirects non-admins away from /admin */}
         <Route
           path="/admin"
           element={

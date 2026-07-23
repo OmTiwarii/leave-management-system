@@ -82,9 +82,7 @@ function AdminPage() {
 
   return (
     <div>
-      {/* ── Admin Navigation Bar ──────────────────────────────────────
-          Shows the brand name, the logged-in admin's name, and a
-          logout button so they can safely end their session. */}
+      {/* Admin navbar - shows brand, the logged-in admin's name, and a logout button */}
       <nav className="admin-navbar">
         <div className="nav-brand">PANTHARA · Admin</div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -108,9 +106,7 @@ function AdminPage() {
           <p>Review and manage employee leave applications</p>
         </div>
 
-        {/* ── Summary Stats ──────────────────────────────────────────────
-            Three quick numbers so the admin can see the overall situation
-            without having to scroll through the table. */}
+        {/* Summary stats - three numbers so the admin can assess the situation at a glance */}
         <div className="stats-grid">
           <div className="stat-card">
             <div className="stat-label">Total</div>
@@ -129,9 +125,8 @@ function AdminPage() {
           </div>
         </div>
 
-        {/* ── All Applications Table ────────────────────────────────────
-            Shows every leave request with employee details and action buttons.
-            If no requests have been submitted yet, an empty state is shown. */}
+        {/* All applications table - full list with employee details and approve/reject buttons.
+            Shows an empty placeholder if no one has applied yet. */}
         <div className="section-card">
           <h3>All Applications</h3>
 

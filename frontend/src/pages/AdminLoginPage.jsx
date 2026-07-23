@@ -89,7 +89,7 @@ function AdminLoginPage() {
         {/* Error message box — only visible when something went wrong */}
         {error && <div className="error-msg">{error}</div>}
 
-        {/* ── Login Form ──────────────────────────────────────────────── */}
+        {/* Login form - email and password fields with a submit button */}
         <form onSubmit={handleAdminLogin}>
           <div className="form-group">
             <label>Admin Email</label>

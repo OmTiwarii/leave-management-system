@@ -60,18 +60,15 @@ function LeaveHistoryPage() {
           <p>Submit a new leave request</p>
         </div>
 
-        {/* ── Leave Application Form ─────────────────────────────────────
-            The LeaveForm component handles all input and submission logic.
-            When a new leave is successfully added, getLeaveList is called
-            so the table below refreshes without a full page reload. */}
+        {/* Leave form - handles all input and submission. When a leave is added,
+            onLeaveAdded is called so the history table below refreshes automatically. */}
         <div className="section-card">
           <h3>New Request</h3>
           <LeaveForm userId={userData._id} onLeaveAdded={getLeaveList} />
         </div>
 
-        {/* ── Leave History Table ────────────────────────────────────────
-            Lists every leave request this employee has ever submitted.
-            If they have never applied, an empty state icon is shown instead. */}
+        {/* Leave history table - lists all requests this employee has submitted.
+            Shows an empty-state message if they haven't applied for anything yet. */}
         <div className="section-card">
           <h3>Leave History</h3>
 

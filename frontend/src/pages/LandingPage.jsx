@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 function LandingPage() {
   return (
     <div>
-      {/* ── Top Navigation Bar ──────────────────────────────────────
-          Shows the brand name on the left and an Employee Login
-          button on the right so employees can quickly sign in. */}
+      {/* Navbar - brand on the left, login button on the right */}
       <nav className="top-navbar">
         <div className="navbar-brand">
           <span className="brand-main">PANTHARA</span>
@@ -25,10 +23,7 @@ function LandingPage() {
         </div>
       </nav>
 
-      {/* ── Hero Section ─────────────────────────────────────────────
-          The big welcome area in the centre of the page.
-          Gives visitors three choices: sign up, log in as employee,
-          or log in as admin. */}
+      {/* Hero section - gives visitors three choices: sign up, employee login, or admin login */}
       <section className="hero">
         <div className="hero-badge">Leave Management System</div>
         <h1 className="hero-title">
@@ -44,9 +39,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* ── Feature Cards ────────────────────────────────────────────
-          Three cards that briefly explain what the system can do.
-          Each card links to the relevant part of the app. */}
+      {/* Feature cards - three quick highlights of what the system can do */}
       <section id="features" className="cards-section">
         <div className="cards-grid">
 
@@ -86,9 +79,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* ── Footer ───────────────────────────────────────────────────
-          Shows the company name, the current year, and quick links
-          so visitors can navigate without scrolling back up. */}
+      {/* Footer - company name, copyright year, and quick nav links */}
       <footer className="site-footer">
         <span style={{ fontWeight: 700, letterSpacing: "1px", color: "#111" }}>
           PANTHARA TECHNOLOGIES
